@@ -1,0 +1,36 @@
+﻿@using Advisor.Models
+@model List<Student>
+
+@{
+    ViewBag.Title = "Assigned_Students";
+}
+
+<h2>Assigned_Students</h2>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model[0].student_id)</th>
+
+        <th>@Html.DisplayNameFor(model => model[0].f_name)</th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.student_id)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.f_name)
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to List", "AdvisorHomePage")
+</div>

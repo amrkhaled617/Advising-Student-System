@@ -1,0 +1,70 @@
+﻿@model List<Advisor.Models.Request>
+
+@{
+    ViewBag.Title = "View_Requests";
+}
+
+<h2>View_Requests</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model[0].request_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].credit_hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].student_id.student_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].course_id.course_id)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.request_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.credit_hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.student_id.student_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.course_id.course_id)
+            </td>
+
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to List", "AdvisorHomePage")
+</div>
